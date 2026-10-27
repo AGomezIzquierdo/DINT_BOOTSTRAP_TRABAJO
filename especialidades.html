@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Especialidades médicas de Vitalia: especialistas, horarios y modalidad de consulta">
+  <title>Especialidades | Vitalia Centro Médico</title>
+  <!-- 1º Bootstrap y Bootstrap Icons -->
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css">
+  <!-- 2º Nuestros estilos (siempre después de Bootstrap para poder sobrescribirlo) -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- ===== BARRA DE NAVEGACIÓN (componente Navbar) ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-heart-pulse-fill me-2"></i>Vitalia</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+              aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Inicio</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="especialidades.html"><i class="bi bi-clipboard2-pulse me-1"></i>Especialidades</a></li>
+        <li class="nav-item"><a class="nav-link" href="instalaciones.html"><i class="bi bi-hospital me-1"></i>Instalaciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="cita.html"><i class="bi bi-calendar2-check me-1"></i>Pedir cita</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== CABECERA CON MIGA DE PAN (componente Breadcrumb) ===== -->
+  <header class="cabecera" style="background-image: url('img/cardiologia.svg');">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-2">
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Especialidades</li>
+        </ol>
+      </nav>
+      <h1 class="display-5 mb-1">Especialidades</h1>
+      <p class="lead mb-0">Especialistas de referencia para cada etapa de tu vida.</p>
+    </div>
+  </header>
+
+  <main class="seccion">
+    <div class="container">
+      <!-- Leyenda de modalidad (componente Alert + Badge) -->
+      <div class="alert alert-light border d-flex flex-wrap align-items-center gap-2 mb-5 aparecer" role="alert">
+        <i class="bi bi-info-circle-fill text-primary fs-5 me-1"></i>
+        <span class="me-2">Tipo de consulta:</span>
+        <span class="badge rounded-pill modalidad-presencial">Presencial</span>
+        <span class="badge rounded-pill modalidad-online">Online</span>
+        <span class="badge rounded-pill modalidad-urgencias">Urgencias</span>
+      </div>
+
+      <!-- Rejilla de tarjetas (componente Card) -->
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4 aparecer">
+          <div class="card h-100 card-elevar">
+            <img src="img/medicina-general.svg" class="card-img-top" alt="Medicina general">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h5 mb-2">Medicina general</h3>
+              <div class="d-flex flex-wrap gap-1 mb-2">
+                <span class="badge rounded-pill modalidad-presencial">Presencial</span> <span class="badge rounded-pill modalidad-online">Online</span>
+              </div>
+              <p class="card-text">Revisiones, diagnóstico y seguimiento de tu salud en general.</p>
+              <ul class="list-group list-group-flush small mt-auto">
+                <li class="list-group-item px-0 d-flex justify-content-between"><span><i class="bi bi-person-badge me-1"></i>Especialista</span><strong>Dra. Lucía Martín</strong></li>
+                <li class="list-group-item px-0 d-flex justify-content-between"><span><i class="bi bi-geo-alt me-1"></i>Ubicación</span><strong>Planta 0</strong></li>
+                <li class="list-group-item px-0 d-flex justify-content-between"><span><i class="bi bi-clock me-1"></i>Horario</span><strong>L-V · 8:00-21:00</strong></li>
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <a href="cita.html" class="btn btn-primary w-100"><i class="bi bi-calendar2-check me-1"></i>Pedir cita</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 aparecer">
+          <div class="card h-100 card-elevar">
+            <img src="img/cardiologia.svg" class="card-img-top" alt="Cardiología">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h5 mb-2">Cardiología</h3>
+              <div class="d-flex flex-wrap gap-1 mb-2">
+                <span class="badge rounded-pill modalidad-presencial">Presencial</span> <span class="badge rounded-pill modalidad-urgencias">Urgencias</span>
+              </div>
+              <p class="card-text">Electrocardiogramas, ecocardiografías y control de la tensión.</p>
+              <ul class="list-group list-group-flush small mt-auto">
+                <li class="list-group-item px-0 d-flex justify-content-between"><span><i class="bi bi-person-badge me-1"></i>Especialista</span><strong>Dr. Andrés Romero</strong></li>
+                <li class="list-group-item px-0 d-flex justify-content-between"><span><i class="bi bi-geo-alt me-1"></i>Ubicación</span><strong>Planta 1</strong></li>
+                <li class="list-group-item px-0 d-flex justify-content-between"><span><i class="bi bi-clock me-1"></i>Horario</span><strong>L-V · 9:00-14:00</strong></li>
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <a href="cita.html" class="btn btn-primary w-100"><i class="bi bi-calendar2-check me-1"></i>Pedir cita</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 aparecer">
+          <div class="card h-100 card-elevar">
+            <img src="img/pediatria.svg" class="card-img-top" alt="Pediatría">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h5 mb-2">Pediatría</h3>
+              <div class="d-flex flex-wrap gap-1 mb-2">
+                <span class="badge rounded-pill modalidad-presencial">Presencial</span> <span class="badge rounded-pill modalidad-online">Online</span> <span class="badge rounded-pill modalidad-urgencias">Urgencias</span>
+              </div>
+              <p class="card-text">Atención a bebés, niños y adolescentes hasta los 14 años.</p>
+              <ul class="list-group list-group-flush small mt-auto">
+                <li class="list-group-item px-0 d-flex justify-content-between"><span><i class="bi bi-person-badge me-1"></i>Especialista</span><strong>Dra. Carmen Ruiz</strong></li>
+                <li class="list-group-item px-0 d-flex justify-content-between"><span><i class="bi bi-geo-alt me-1"></i>Ubicación</span><strong>Planta 0</strong></li>
+                <li class="list-group-item px-0 d-flex justify-content-between"><span><i class="bi bi-clock me-1"></i>Horario</span><strong>L-S · 9:00-20:00</strong></li>
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <a href="cita.html" class="btn btn-primary w-100"><i class="bi bi-calendar2-check me-1"></i>Pedir cita</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 aparecer">
+          <div class="card h-100 card-elevar">
+            <img src="img/dermatologia.svg" class="card-img-top" alt="Dermatología">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h5 mb-2">Dermatología</h3>
+              <div class="d-flex flex-wrap gap-1 mb-2">
+                <span class="badge rounded-pill modalidad-presencial">Presencial</span> <span class="badge rounded-pill modalidad-online">Online</span>
+              </div>
+              <p class="card-text">Revisión de lunares, acné, alergias cutáneas y tratamientos de la piel.</p>
+              <ul class="list-group list-group-flush small mt-auto">
+                <li class="list-group-item px-0 d-flex justify-content-between"><span><i class="bi bi-person-badge me-1"></i>Especialista</span><strong>Dr. Pablo Navarro</strong></li>
+                <li class="list-group-item px-0 d-flex justify-content-between"><span><i class="bi bi-geo-alt me-1"></i>Ubicación</span><strong>Planta 2</strong></li>
+                <li class="list-group-item px-0 d-flex justify-content-between"><span><i class="bi bi-clock me-1"></i>Horario</span><strong>L-J · 16:00-20:00</strong></li>
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <a href="cita.html" class="btn btn-primary w-100"><i class="bi bi-calendar2-check me-1"></i>Pedir cita</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 aparecer">
+          <div class="card h-100 card-elevar">
+            <img src="img/oftalmologia.svg" class="card-img-top" alt="Oftalmología">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h5 mb-2">Oftalmología</h3>
+              <div class="d-flex flex-wrap gap-1 mb-2">
+                <span class="badge rounded-pill modalidad-presencial">Presencial</span>
+              </div>
+              <p class="card-text">Graduación de la vista, fondo de ojo y control de la tensión ocular.</p>
+              <ul class="list-group list-group-flush small mt-auto">
+                <li class="list-group-item px-0 d-flex justify-content-between"><span><i class="bi bi-person-badge me-1"></i>Especialista</span><strong>Dra. Elena Castro</strong></li>
+                <li class="list-group-item px-0 d-flex justify-content-between"><span><i class="bi bi-geo-alt me-1"></i>Ubicación</span><strong>Planta 2</strong></li>
+                <li class="list-group-item px-0 d-flex justify-content-between"><span><i class="bi bi-clock me-1"></i>Horario</span><strong>M-V · 9:00-14:00</strong></li>
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <a href="cita.html" class="btn btn-primary w-100"><i class="bi bi-calendar2-check me-1"></i>Pedir cita</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 aparecer">
+          <div class="card h-100 card-elevar">
+            <img src="img/traumatologia.svg" class="card-img-top" alt="Traumatología">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h5 mb-2">Traumatología</h3>
+              <div class="d-flex flex-wrap gap-1 mb-2">
+                <span class="badge rounded-pill modalidad-presencial">Presencial</span> <span class="badge rounded-pill modalidad-urgencias">Urgencias</span>
+              </div>
+              <p class="card-text">Lesiones de huesos, músculos y articulaciones, deportivas y laborales.</p>
+              <ul class="list-group list-group-flush small mt-auto">
+                <li class="list-group-item px-0 d-flex justify-content-between"><span><i class="bi bi-person-badge me-1"></i>Especialista</span><strong>Dr. Javier Ortega</strong></li>
+                <li class="list-group-item px-0 d-flex justify-content-between"><span><i class="bi bi-geo-alt me-1"></i>Ubicación</span><strong>Planta 1</strong></li>
+                <li class="list-group-item px-0 d-flex justify-content-between"><span><i class="bi bi-clock me-1"></i>Horario</span><strong>L-V · 10:00-19:00</strong></li>
+              </ul>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <a href="cita.html" class="btn btn-primary w-100"><i class="bi bi-calendar2-check me-1"></i>Pedir cita</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabla de horarios (componente Table) -->
+      <section class="mt-5 pt-3 aparecer" id="horarios">
+        <h2 class="h3 mb-1"><i class="bi bi-table me-2 text-primary"></i>Horario de consultas</h2>
+        <p class="text-body-secondary mb-3">En móvil solo se muestran las columnas principales; el especialista y la planta aparecen en pantallas más grandes.</p>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover align-middle tabla-horarios">
+            <caption>Horarios orientativos. Pueden cambiar en festivos.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Especialidad</th>
+                <th scope="col" class="d-none d-md-table-cell">Especialista</th>
+                <th scope="col" class="d-none d-lg-table-cell">Ubicación</th>
+                <th scope="col">Horario</th>
+                <th scope="col" class="text-center">Videoconsulta</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Medicina general</th>
+                <td class="d-none d-md-table-cell">Dra. Lucía Martín</td>
+                <td class="d-none d-lg-table-cell">Planta 0</td>
+                <td>L-V · 8:00-21:00</td>
+                <td class="text-center"><i class="bi bi-check-circle-fill text-primary" aria-label="Sí"></i></td>
+              </tr>
+              <tr>
+                <th scope="row">Cardiología</th>
+                <td class="d-none d-md-table-cell">Dr. Andrés Romero</td>
+                <td class="d-none d-lg-table-cell">Planta 1</td>
+                <td>L-V · 9:00-14:00</td>
+                <td class="text-center"><i class="bi bi-dash-lg text-body-tertiary" aria-label="No"></i></td>
+              </tr>
+              <tr>
+                <th scope="row">Pediatría</th>
+                <td class="d-none d-md-table-cell">Dra. Carmen Ruiz</td>
+                <td class="d-none d-lg-table-cell">Planta 0</td>
+                <td>L-S · 9:00-20:00</td>
+                <td class="text-center"><i class="bi bi-check-circle-fill text-primary" aria-label="Sí"></i></td>
+              </tr>
+              <tr>
+                <th scope="row">Dermatología</th>
+                <td class="d-none d-md-table-cell">Dr. Pablo Navarro</td>
+                <td class="d-none d-lg-table-cell">Planta 2</td>
+                <td>L-J · 16:00-20:00</td>
+                <td class="text-center"><i class="bi bi-check-circle-fill text-primary" aria-label="Sí"></i></td>
+              </tr>
+              <tr>
+                <th scope="row">Oftalmología</th>
+                <td class="d-none d-md-table-cell">Dra. Elena Castro</td>
+                <td class="d-none d-lg-table-cell">Planta 2</td>
+                <td>M-V · 9:00-14:00</td>
+                <td class="text-center"><i class="bi bi-dash-lg text-body-tertiary" aria-label="No"></i></td>
+              </tr>
+              <tr>
+                <th scope="row">Traumatología</th>
+                <td class="d-none d-md-table-cell">Dr. Javier Ortega</td>
+                <td class="d-none d-lg-table-cell">Planta 1</td>
+                <td>L-V · 10:00-19:00</td>
+                <td class="text-center"><i class="bi bi-dash-lg text-body-tertiary" aria-label="No"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-5">
+          <h5 class="d-flex align-items-center"><i class="bi bi-heart-pulse-fill me-2 text-warning"></i>Vitalia</h5>
+          <p class="small mb-1">Centro Médico y Especialidades.</p>
+          <p class="small mb-0"><i class="bi bi-telephone-fill me-1"></i>Urgencias 24 h: 954 000 112</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Secciones</h5>
+          <ul class="list-unstyled small">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="especialidades.html">Especialidades</a></li>
+            <li><a href="instalaciones.html">Instalaciones</a></li>
+            <li><a href="cita.html">Pedir cita</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4">
+          <h5>Síguenos</h5>
+          <div class="redes">
+            <a href="#" data-bs-toggle="tooltip" data-bs-title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" data-bs-toggle="tooltip" data-bs-title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" data-bs-toggle="tooltip" data-bs-title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-light opacity-25 my-4">
+      <div class="d-flex flex-column flex-sm-row justify-content-between small">
+        <span>&copy; <span id="anio">2026</span> Vitalia · Práctica de Desarrollo de Interfaces · 2º DAM</span>
+        <span class="autor"><i class="bi bi-person-fill me-1"></i>Página realizada por David Jiménez</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (incluye Popper para tooltips) y nuestro JS -->
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

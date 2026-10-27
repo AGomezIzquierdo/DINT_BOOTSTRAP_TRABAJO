@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pide cita en el centro médico Vitalia">
+  <title>Pedir cita | Vitalia Centro Médico</title>
+  <!-- 1º Bootstrap y Bootstrap Icons -->
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css">
+  <!-- 2º Nuestros estilos (siempre después de Bootstrap para poder sobrescribirlo) -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- ===== BARRA DE NAVEGACIÓN (componente Navbar) ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-heart-pulse-fill me-2"></i>Vitalia</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+              aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="especialidades.html"><i class="bi bi-clipboard2-pulse me-1"></i>Especialidades</a></li>
+        <li class="nav-item"><a class="nav-link" href="instalaciones.html"><i class="bi bi-hospital me-1"></i>Instalaciones</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="cita.html"><i class="bi bi-calendar2-check me-1"></i>Pedir cita</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== CABECERA CON MIGA DE PAN (componente Breadcrumb) ===== -->
+  <header class="cabecera" style="background-image: url('img/cita-online.svg');">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-2">
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Pedir cita</li>
+        </ol>
+      </nav>
+      <h1 class="display-5 mb-1">Pedir cita</h1>
+      <p class="lead mb-0">Reserva tu consulta en menos de un minuto.</p>
+    </div>
+  </header>
+
+  <main class="seccion">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Formulario (componente Forms + validación) -->
+        <div class="col-12 col-lg-7 aparecer">
+          <div class="card p-4">
+            <h2 class="h3 mb-4"><i class="bi bi-calendar2-plus me-2 text-primary"></i>Solicitud de cita</h2>
+            <form id="formContacto" class="row g-3" novalidate>
+              <div class="col-12 col-md-6">
+                <label for="nombre" class="form-label">Nombre y apellidos</label>
+                <input type="text" class="form-control" id="nombre" required minlength="2">
+                <div class="invalid-feedback">Escribe tu nombre.</div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text"><i class="bi bi-at"></i></span>
+                  <input type="email" class="form-control" id="email" required>
+                  <div class="invalid-feedback">Introduce un correo válido.</div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="especialidad" class="form-label">Especialidad</label>
+                <select class="form-select" id="especialidad" required>
+                  <option value="" selected disabled>Elige una especialidad…</option>
+                    <option>Medicina general</option>
+                    <option>Cardiología</option>
+                    <option>Pediatría</option>
+                    <option>Dermatología</option>
+                    <option>Oftalmología</option>
+                    <option>Traumatología</option>
+                </select>
+                <div class="invalid-feedback">Selecciona una especialidad.</div>
+              </div>
+              <div class="col-12 col-md-6">
+                <label for="fecha" class="form-label">Fecha preferida</label>
+                <input type="date" class="form-control" id="fecha" required>
+                <div class="invalid-feedback">Indica una fecha.</div>
+              </div>
+              <div class="col-12">
+                <span class="form-label d-block">Modalidad</span>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="modalidad" id="presencial" checked>
+                  <label class="form-check-label" for="presencial">Presencial</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="modalidad" id="online">
+                  <label class="form-check-label" for="online">Videoconsulta</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="motivo" class="form-label">Motivo de la consulta</label>
+                <textarea class="form-control" id="motivo" rows="3" placeholder="Cuéntanos brevemente qué te ocurre"></textarea>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="privacidad" required>
+                  <label class="form-check-label" for="privacidad">Acepto la política de privacidad</label>
+                  <div class="invalid-feedback">Debes aceptarla para continuar.</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-secondary btn-lg"><i class="bi bi-send me-2"></i>Solicitar cita</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Datos de contacto (componente List group) -->
+        <div class="col-12 col-lg-5 aparecer">
+          <h2 class="h3 mb-4">Dónde estamos</h2>
+          <ul class="list-group mb-4">
+            <li class="list-group-item d-flex align-items-center"><i class="bi bi-geo-alt-fill text-primary fs-4 me-3"></i>Av. de la Constitución, 20 · 41004 Sevilla</li>
+            <li class="list-group-item d-flex align-items-center"><i class="bi bi-telephone-fill text-primary fs-4 me-3"></i>954 000 000</li>
+            <li class="list-group-item d-flex align-items-center"><i class="bi bi-envelope-fill text-primary fs-4 me-3"></i>citas@vitalia.es</li>
+            <li class="list-group-item d-flex align-items-center"><i class="bi bi-clock-fill text-primary fs-4 me-3"></i>Lunes a sábado, de 8:00 a 21:00</li>
+          </ul>
+          <!-- En móvil: botón para llamar directamente -->
+          <a href="tel:954000112" class="btn btn-danger btn-lg w-100 d-md-none mb-3"><i class="bi bi-telephone-fill me-2"></i>Urgencias: 954 000 112</a>
+          <!-- En tablet y escritorio: aviso completo -->
+          <div class="alert alert-danger d-none d-md-flex" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-2 fs-5"></i>
+            <div>Si es una <strong>urgencia</strong>, no pidas cita: llama al <strong>954 000 112</strong> o acude directamente al centro.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Aviso de envío correcto (componente Toast) -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="toastEnviado" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="toast-header bg-primary text-white">
+        <i class="bi bi-check-circle-fill me-2"></i>
+        <strong class="me-auto">Vitalia</strong>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+      </div>
+      <div class="toast-body">¡Solicitud enviada! Te confirmaremos la cita por correo en menos de 24 horas.</div>
+    </div>
+  </div>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-5">
+          <h5 class="d-flex align-items-center"><i class="bi bi-heart-pulse-fill me-2 text-warning"></i>Vitalia</h5>
+          <p class="small mb-1">Centro Médico y Especialidades.</p>
+          <p class="small mb-0"><i class="bi bi-telephone-fill me-1"></i>Urgencias 24 h: 954 000 112</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Secciones</h5>
+          <ul class="list-unstyled small">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="especialidades.html">Especialidades</a></li>
+            <li><a href="instalaciones.html">Instalaciones</a></li>
+            <li><a href="cita.html">Pedir cita</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4">
+          <h5>Síguenos</h5>
+          <div class="redes">
+            <a href="#" data-bs-toggle="tooltip" data-bs-title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" data-bs-toggle="tooltip" data-bs-title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" data-bs-toggle="tooltip" data-bs-title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-light opacity-25 my-4">
+      <div class="d-flex flex-column flex-sm-row justify-content-between small">
+        <span>&copy; <span id="anio">2026</span> Vitalia · Práctica de Desarrollo de Interfaces · 2º DAM</span>
+        <span class="autor"><i class="bi bi-person-fill me-1"></i>Página realizada por Alejandro Gómez</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (incluye Popper para tooltips) y nuestro JS -->
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

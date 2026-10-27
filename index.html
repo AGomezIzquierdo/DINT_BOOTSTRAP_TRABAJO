@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vitalia: centro médico y especialidades en Sevilla">
+  <title>Inicio | Vitalia Centro Médico</title>
+  <!-- 1º Bootstrap y Bootstrap Icons -->
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css">
+  <!-- 2º Nuestros estilos (siempre después de Bootstrap para poder sobrescribirlo) -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- ===== BARRA DE NAVEGACIÓN (componente Navbar) ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-heart-pulse-fill me-2"></i>Vitalia</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+              aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html"><i class="bi bi-house-door me-1"></i>Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="especialidades.html"><i class="bi bi-clipboard2-pulse me-1"></i>Especialidades</a></li>
+        <li class="nav-item"><a class="nav-link" href="instalaciones.html"><i class="bi bi-hospital me-1"></i>Instalaciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="cita.html"><i class="bi bi-calendar2-check me-1"></i>Pedir cita</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== CARRUSEL (componente Carousel) ===== -->
+  <div id="carruselInicio" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carruselInicio" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Diapositiva 1"></button>
+      <button type="button" data-bs-target="#carruselInicio" data-bs-slide-to="1" aria-label="Diapositiva 2"></button>
+      <button type="button" data-bs-target="#carruselInicio" data-bs-slide-to="2" aria-label="Diapositiva 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/centro.svg" class="d-block w-100" alt="Tu salud, en buenas manos">
+        <div class="carousel-caption">
+          <h2>Tu salud, en buenas manos</h2>
+          <p class="mb-3 d-none d-sm-block">Más de 15 especialidades médicas en un mismo centro, en el corazón de Sevilla.</p>  <!-- se oculta en móvil (xs) -->
+          <a href="cita.html" class="btn btn-warning btn-latido"><i class="bi bi-calendar2-check me-1"></i>Pedir cita</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/cita-online.svg" class="d-block w-100" alt="Pide cita en un minuto">
+        <div class="carousel-caption">
+          <h2>Pide cita en un minuto</h2>
+          <p class="mb-3 d-none d-sm-block">Elige especialidad, día y hora desde el móvil o el ordenador.</p>  <!-- se oculta en móvil (xs) -->
+          <a href="cita.html" class="btn btn-warning"><i class="bi bi-calendar2-check me-1"></i>Pedir cita</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/urgencias.svg" class="d-block w-100" alt="Urgencias 24 horas">
+        <div class="carousel-caption">
+          <h2>Urgencias 24 horas</h2>
+          <p class="mb-3 d-none d-sm-block">Atención inmediata los 365 días del año.</p>  <!-- se oculta en móvil (xs) -->
+          <a href="cita.html" class="btn btn-warning"><i class="bi bi-calendar2-check me-1"></i>Pedir cita</a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carruselInicio" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carruselInicio" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+
+  <main>
+    <!-- ===== PRESENTACIÓN ===== -->
+    <section class="seccion">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-6 aparecer">
+            <p class="etiqueta mb-2">Quiénes somos</p>
+            <h2 class="display-6 mb-3">Medicina cercana y de confianza</h2>
+            <p>En <strong>Vitalia</strong> reunimos a un equipo de más de 40 profesionales sanitarios y la tecnología necesaria para que puedas hacer tus consultas, pruebas y revisiones en un mismo lugar, con trato cercano y sin largas esperas.</p>
+            <a href="especialidades.html" class="btn btn-primary btn-lg me-2 mb-2"><i class="bi bi-clipboard2-pulse me-1"></i>Ver especialidades</a>
+            <a href="cita.html" class="btn btn-outline-primary btn-lg mb-2">Pedir cita</a>
+          </div>
+          <!-- La imagen solo se ve a partir de md (tablet y escritorio) -->
+          <div class="col-12 col-lg-6 aparecer d-none d-md-block">
+            <img src="img/equipo.svg" class="img-fluid rounded-4 shadow" alt="Equipo médico de Vitalia">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VENTAJAS (componente Card + rejilla) ===== -->
+    <section class="seccion bg-blanco">
+      <div class="container">
+        <div class="text-center mb-5 aparecer">
+          <p class="etiqueta mb-2">Por qué elegirnos</p>
+          <h2 class="display-6">Cuidamos de ti y de tu familia</h2>
+        </div>
+        <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3 aparecer">
+          <div class="card h-100 text-center p-4 card-elevar">
+            <div><span class="icono-circulo mb-3"><i class="bi bi-clipboard2-pulse"></i></span></div>
+            <h3 class="h5">15 especialidades</h3>
+            <p class="mb-0 text-body-secondary">Medicina general, cardiología, pediatría, dermatología y mucho más.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 aparecer">
+          <div class="card h-100 text-center p-4 card-elevar">
+            <div><span class="icono-circulo mb-3"><i class="bi bi-clock-history"></i></span></div>
+            <h3 class="h5">Sin esperas</h3>
+            <p class="mb-0 text-body-secondary">Citas en menos de 48 horas en la mayoría de especialidades.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 aparecer">
+          <div class="card h-100 text-center p-4 card-elevar">
+            <div><span class="icono-circulo mb-3"><i class="bi bi-shield-plus"></i></span></div>
+            <h3 class="h5">Todas las mutuas</h3>
+            <p class="mb-0 text-body-secondary">Trabajamos con las principales aseguradoras y también de forma privada.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 aparecer">
+          <div class="card h-100 text-center p-4 card-elevar">
+            <div><span class="icono-circulo mb-3"><i class="bi bi-laptop"></i></span></div>
+            <h3 class="h5">Videoconsulta</h3>
+            <p class="mb-0 text-body-secondary">Consulta online con tu especialista sin moverte de casa.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PREGUNTAS FRECUENTES (componente Accordion) ===== -->
+    <section class="seccion">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8 aparecer">
+            <p class="etiqueta text-center mb-2">Dudas</p>
+            <h2 class="display-6 text-center mb-4">Preguntas frecuentes</h2>
+            <div class="accordion" id="acordeonFAQ">
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                    <i class="bi bi-calendar-event me-2"></i>¿Cómo pido cita?
+                  </button>
+                </h3>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#acordeonFAQ">
+                  <div class="accordion-body">Desde la página «Pedir cita», por teléfono en el 954 000 000 o en la recepción del centro.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                    <i class="bi bi-shield-plus me-2"></i>¿Aceptáis mi seguro médico?
+                  </button>
+                </h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#acordeonFAQ">
+                  <div class="accordion-body">Trabajamos con las principales mutuas. Si la tuya no aparece, también atendemos de forma privada.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                    <i class="bi bi-file-earmark-medical me-2"></i>¿Qué debo llevar a la consulta?
+                  </button>
+                </h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#acordeonFAQ">
+                  <div class="accordion-body">Tu DNI, la tarjeta de tu seguro (si tienes) y los informes o pruebas anteriores relacionados.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-5">
+          <h5 class="d-flex align-items-center"><i class="bi bi-heart-pulse-fill me-2 text-warning"></i>Vitalia</h5>
+          <p class="small mb-1">Centro Médico y Especialidades.</p>
+          <p class="small mb-0"><i class="bi bi-telephone-fill me-1"></i>Urgencias 24 h: 954 000 112</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Secciones</h5>
+          <ul class="list-unstyled small">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="especialidades.html">Especialidades</a></li>
+            <li><a href="instalaciones.html">Instalaciones</a></li>
+            <li><a href="cita.html">Pedir cita</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4">
+          <h5>Síguenos</h5>
+          <div class="redes">
+            <a href="#" data-bs-toggle="tooltip" data-bs-title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" data-bs-toggle="tooltip" data-bs-title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" data-bs-toggle="tooltip" data-bs-title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-light opacity-25 my-4">
+      <div class="d-flex flex-column flex-sm-row justify-content-between small">
+        <span>&copy; <span id="anio">2026</span> Vitalia · Práctica de Desarrollo de Interfaces · 2º DAM</span>
+        <span class="autor"><i class="bi bi-person-fill me-1"></i>Página realizada por Gabriel Vigo</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (incluye Popper para tooltips) y nuestro JS -->
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

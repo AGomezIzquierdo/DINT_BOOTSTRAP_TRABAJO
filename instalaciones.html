@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Instalaciones del centro médico Vitalia">
+  <title>Instalaciones | Vitalia Centro Médico</title>
+  <!-- 1º Bootstrap y Bootstrap Icons -->
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css">
+  <!-- 2º Nuestros estilos (siempre después de Bootstrap para poder sobrescribirlo) -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- ===== BARRA DE NAVEGACIÓN (componente Navbar) ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-heart-pulse-fill me-2"></i>Vitalia</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+              aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door me-1"></i>Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="especialidades.html"><i class="bi bi-clipboard2-pulse me-1"></i>Especialidades</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="instalaciones.html"><i class="bi bi-hospital me-1"></i>Instalaciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="cita.html"><i class="bi bi-calendar2-check me-1"></i>Pedir cita</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== CABECERA CON MIGA DE PAN (componente Breadcrumb) ===== -->
+  <header class="cabecera" style="background-image: url('img/recepcion.svg');">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-2">
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Instalaciones</li>
+        </ol>
+      </nav>
+      <h1 class="display-5 mb-1">Instalaciones</h1>
+      <p class="lead mb-0">3.000 m² pensados para tu comodidad y tu salud.</p>
+    </div>
+  </header>
+
+  <main class="seccion">
+    <div class="container">
+      <!-- Filtro por categoría (componente Nav pills) -->
+      <ul class="nav nav-pills justify-content-center flex-wrap gap-2 mb-5" role="tablist">
+        <li class="nav-item"><button class="nav-link active" data-filtro="todas" type="button"><i class="bi bi-grid-3x3-gap me-1"></i>Todas</button></li>
+        <li class="nav-item"><button class="nav-link" data-filtro="consultas" type="button"><i class="bi bi-door-open me-1"></i>Consultas</button></li>
+        <li class="nav-item"><button class="nav-link" data-filtro="diagnostico" type="button"><i class="bi bi-activity me-1"></i>Diagnóstico</button></li>
+        <li class="nav-item"><button class="nav-link" data-filtro="comunes" type="button"><i class="bi bi-cup-hot me-1"></i>Zonas comunes</button></li>
+      </ul>
+
+      <!-- Mensaje distinto según el dispositivo -->
+      <p class="text-center text-body-secondary d-md-none"><i class="bi bi-hand-index me-1"></i>Toca una foto para verla en grande.</p>
+      <p class="text-center text-body-secondary d-none d-md-block"><i class="bi bi-mouse me-1"></i>Haz clic en cualquier foto para verla en grande y leer su descripción.</p>
+
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3 item-galeria aparecer" data-categoria="comunes">
+          <figure class="foto-galeria shadow-sm mb-0" data-bs-toggle="modal" data-bs-target="#modalFoto"
+                  data-imagen="img/recepcion.svg" data-titulo="Recepción" data-descripcion="Atención al paciente y gestión de citas desde las 8:00." tabindex="0">
+            <img src="img/recepcion.svg" alt="Recepción">
+            <figcaption><i class="bi bi-camera me-1"></i>Recepción</figcaption>
+          </figure>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 item-galeria aparecer" data-categoria="consultas">
+          <figure class="foto-galeria shadow-sm mb-0" data-bs-toggle="modal" data-bs-target="#modalFoto"
+                  data-imagen="img/consulta.svg" data-titulo="Consultas" data-descripcion="24 consultas luminosas y totalmente equipadas." tabindex="0">
+            <img src="img/consulta.svg" alt="Consultas">
+            <figcaption><i class="bi bi-camera me-1"></i>Consultas</figcaption>
+          </figure>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 item-galeria aparecer" data-categoria="diagnostico">
+          <figure class="foto-galeria shadow-sm mb-0" data-bs-toggle="modal" data-bs-target="#modalFoto"
+                  data-imagen="img/radiologia.svg" data-titulo="Radiología" data-descripcion="Rayos X, ecografía y resonancia magnética digital." tabindex="0">
+            <img src="img/radiologia.svg" alt="Radiología">
+            <figcaption><i class="bi bi-camera me-1"></i>Radiología</figcaption>
+          </figure>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 item-galeria aparecer" data-categoria="diagnostico">
+          <figure class="foto-galeria shadow-sm mb-0" data-bs-toggle="modal" data-bs-target="#modalFoto"
+                  data-imagen="img/laboratorio.svg" data-titulo="Laboratorio" data-descripcion="Análisis clínicos con resultados en 24 horas." tabindex="0">
+            <img src="img/laboratorio.svg" alt="Laboratorio">
+            <figcaption><i class="bi bi-camera me-1"></i>Laboratorio</figcaption>
+          </figure>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 item-galeria aparecer" data-categoria="consultas">
+          <figure class="foto-galeria shadow-sm mb-0" data-bs-toggle="modal" data-bs-target="#modalFoto"
+                  data-imagen="img/fisioterapia.svg" data-titulo="Fisioterapia" data-descripcion="Sala de rehabilitación con equipos de última generación." tabindex="0">
+            <img src="img/fisioterapia.svg" alt="Fisioterapia">
+            <figcaption><i class="bi bi-camera me-1"></i>Fisioterapia</figcaption>
+          </figure>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 item-galeria aparecer" data-categoria="consultas">
+          <figure class="foto-galeria shadow-sm mb-0" data-bs-toggle="modal" data-bs-target="#modalFoto"
+                  data-imagen="img/vacunacion.svg" data-titulo="Vacunación" data-descripcion="Calendario infantil, vacunas de viaje y de temporada." tabindex="0">
+            <img src="img/vacunacion.svg" alt="Vacunación">
+            <figcaption><i class="bi bi-camera me-1"></i>Vacunación</figcaption>
+          </figure>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 item-galeria aparecer" data-categoria="comunes">
+          <figure class="foto-galeria shadow-sm mb-0" data-bs-toggle="modal" data-bs-target="#modalFoto"
+                  data-imagen="img/farmacia.svg" data-titulo="Farmacia" data-descripcion="Farmacia propia en la planta baja del centro." tabindex="0">
+            <img src="img/farmacia.svg" alt="Farmacia">
+            <figcaption><i class="bi bi-camera me-1"></i>Farmacia</figcaption>
+          </figure>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3 item-galeria aparecer" data-categoria="comunes">
+          <figure class="foto-galeria shadow-sm mb-0" data-bs-toggle="modal" data-bs-target="#modalFoto"
+                  data-imagen="img/sala-espera.svg" data-titulo="Sala de espera" data-descripcion="Espacio tranquilo con cafetería y wifi gratuito." tabindex="0">
+            <img src="img/sala-espera.svg" alt="Sala de espera">
+            <figcaption><i class="bi bi-camera me-1"></i>Sala de espera</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Ventana emergente para ver la foto en grande (componente Modal) -->
+  <div class="modal fade" id="modalFoto" tabindex="-1" aria-labelledby="tituloModalFoto" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="tituloModalFoto">Foto</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <img src="" class="img-fluid rounded mb-3" alt="">
+          <p class="mb-0 text-body-secondary"></p>
+        </div>
+        <div class="modal-footer">
+          <a href="cita.html" class="btn btn-primary"><i class="bi bi-calendar2-check me-1"></i>Pedir cita</a>
+          <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-5">
+          <h5 class="d-flex align-items-center"><i class="bi bi-heart-pulse-fill me-2 text-warning"></i>Vitalia</h5>
+          <p class="small mb-1">Centro Médico y Especialidades.</p>
+          <p class="small mb-0"><i class="bi bi-telephone-fill me-1"></i>Urgencias 24 h: 954 000 112</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h5>Secciones</h5>
+          <ul class="list-unstyled small">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="especialidades.html">Especialidades</a></li>
+            <li><a href="instalaciones.html">Instalaciones</a></li>
+            <li><a href="cita.html">Pedir cita</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4">
+          <h5>Síguenos</h5>
+          <div class="redes">
+            <a href="#" data-bs-toggle="tooltip" data-bs-title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" data-bs-toggle="tooltip" data-bs-title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" data-bs-toggle="tooltip" data-bs-title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-light opacity-25 my-4">
+      <div class="d-flex flex-column flex-sm-row justify-content-between small">
+        <span>&copy; <span id="anio">2026</span> Vitalia · Práctica de Desarrollo de Interfaces · 2º DAM</span>
+        <span class="autor"><i class="bi bi-person-fill me-1"></i>Página realizada por Juan Bueno</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (incluye Popper para tooltips) y nuestro JS -->
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

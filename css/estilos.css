@@ -1,0 +1,249 @@
+/* =========================================================
+   VITALIA - Centro Médico y Especialidades - Hoja de estilos
+   Se carga DESPUÉS de bootstrap.min.css para sobrescribir
+   sus valores por defecto (ver Anexo I de la práctica).
+   ========================================================= */
+
+/* ---------- 1. Tipografías (ficheros locales) ---------- */
+@font-face { font-family: "Montserrat"; font-weight: 400; font-display: swap; src: url("../vendor/fonts/montserrat-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-weight: 600; font-display: swap; src: url("../vendor/fonts/montserrat-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-weight: 700; font-display: swap; src: url("../vendor/fonts/montserrat-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-weight: 800; font-display: swap; src: url("../vendor/fonts/montserrat-latin-800-normal.woff2") format("woff2"); }
+@font-face { font-family: "Open Sans";  font-weight: 400; font-display: swap; src: url("../vendor/fonts/open-sans-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Open Sans";  font-weight: 600; font-display: swap; src: url("../vendor/fonts/open-sans-latin-600-normal.woff2") format("woff2"); }
+
+/* ---------- 2. Paleta de colores ---------- */
+:root {
+  /* Colores propios del proyecto */
+  /* Paleta generada con Paletton: esquema "Adjacent colors" + complementario,
+     color base #0E7C7C  (https://paletton.com/#uid=63i0u0ksopWirwvnit0uBl5BIg4) */
+  --cm-turquesa:     #0E7C7C;  /* primario (pri-0): turquesa clínico */
+  --cm-turquesa-osc: #046565;  /* primario más oscuro (pri-3) */
+  --cm-marino:       #102D70;  /* secundario 1 (sec1-3): azul marino */
+  --cm-marino-osc:   #071F56;  /* secundario 1 más oscuro (sec1-4) */
+  --cm-verde:        #068606;  /* secundario 2 (sec2-3): verde, para estados de éxito */
+  --cm-naranja:      #E78B3F;  /* complementario (compl-2): acento cálido */
+  --cm-naranja-osc:  #A85007;  /* complementario oscuro (compl-3): textos de acento */
+  --cm-blanco:       #F1F7F7;  /* fondo claro: blanco clínico (tinte muy claro del primario) */
+  --cm-noche:        #071F56;  /* textos y fondos oscuros (sec1-4) */
+
+  /* Sobrescribimos las variables de Bootstrap 5.3 */
+  --bs-primary: var(--cm-turquesa);
+  --bs-primary-rgb: 14, 124, 124;
+  --bs-secondary: var(--cm-marino);
+  --bs-secondary-rgb: 16, 45, 112;
+  --bs-warning: var(--cm-naranja);
+  --bs-warning-rgb: 231, 139, 63;
+  --bs-success: var(--cm-verde);
+  --bs-success-rgb: 6, 134, 6;
+  --bs-form-valid-color: var(--cm-verde);
+  --bs-form-valid-border-color: var(--cm-verde);
+  --bs-light: var(--cm-blanco);
+  --bs-light-rgb: 241, 247, 247;
+  --bs-dark: var(--cm-noche);
+  --bs-dark-rgb: 7, 31, 86;
+
+  --bs-body-bg: #FBFDFD;
+  --bs-body-color: #2B2B2B;
+  --bs-body-font-family: "Open Sans", system-ui, sans-serif;
+  --bs-link-color: var(--cm-turquesa-osc);
+  --bs-link-color-rgb: 4, 101, 101;
+  --bs-link-hover-color: var(--cm-marino);
+  --bs-link-hover-color-rgb: 16, 45, 112;
+  --bs-border-radius: .6rem;
+  --bs-focus-ring-color: rgba(231, 139, 63, .40);
+}
+
+/* Los botones de Bootstrap tienen sus propias variables: hay que cambiarlas también */
+.btn-primary {
+  --bs-btn-bg: var(--cm-turquesa);
+  --bs-btn-border-color: var(--cm-turquesa);
+  --bs-btn-hover-bg: var(--cm-turquesa-osc);
+  --bs-btn-hover-border-color: var(--cm-turquesa-osc);
+  --bs-btn-active-bg: var(--cm-turquesa-osc);
+  --bs-btn-active-border-color: var(--cm-turquesa-osc);
+  --bs-btn-disabled-bg: var(--cm-turquesa);
+  --bs-btn-disabled-border-color: var(--cm-turquesa);
+}
+.btn-secondary {
+  --bs-btn-bg: var(--cm-marino);
+  --bs-btn-border-color: var(--cm-marino);
+  --bs-btn-hover-bg: var(--cm-marino-osc);
+  --bs-btn-hover-border-color: var(--cm-marino-osc);
+  --bs-btn-active-bg: var(--cm-marino-osc);
+  --bs-btn-active-border-color: var(--cm-marino-osc);
+}
+.btn-warning {
+  --bs-btn-bg: var(--cm-naranja);
+  --bs-btn-border-color: var(--cm-naranja);
+  --bs-btn-color: var(--cm-noche);
+  --bs-btn-hover-color: var(--cm-noche);
+  --bs-btn-hover-bg: #CF6A17;
+  --bs-btn-hover-border-color: #CF6A17;
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--cm-turquesa);
+  --bs-btn-border-color: var(--cm-turquesa);
+  --bs-btn-hover-bg: var(--cm-turquesa);
+  --bs-btn-hover-border-color: var(--cm-turquesa);
+  --bs-btn-active-bg: var(--cm-turquesa);
+  --bs-btn-active-border-color: var(--cm-turquesa);
+}
+
+/* ---------- 3. Tipografía general ---------- */
+h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5, .navbar-brand, .titulo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: var(--cm-noche);
+}
+.display-5, .display-6 { font-weight: 700; }
+.text-blanco { color: var(--cm-blanco) !important; }
+.bg-blanco { background-color: var(--cm-blanco) !important; }
+.seccion { padding: 4.5rem 0; }
+.etiqueta {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--cm-naranja-osc);
+}
+
+/* ---------- 4. Barra de navegación (como en el Anexo I) ---------- */
+:root { --bs-navbar-bg: var(--cm-marino); }
+.navbar-dark { background-color: var(--bs-navbar-bg) !important; }
+.navbar-brand { color: var(--cm-blanco) !important; letter-spacing: .02em; }
+.navbar-brand i { color: var(--cm-naranja); }
+.navbar .nav-link { font-family: "Montserrat", sans-serif; font-weight: 600; }
+.navbar .nav-link.active { color: #FFFFFF !important; box-shadow: inset 0 -3px 0 var(--cm-naranja); }
+
+/* ---------- 5. Carrusel / cabeceras ---------- */
+.carousel-item { height: 78vh; min-height: 420px; }
+.carousel-item img { object-fit: cover; height: 100%; }
+.carousel-caption {
+  background: rgba(31, 42, 36, .62);
+  border-radius: var(--bs-border-radius);
+  padding: 1.5rem;
+  bottom: 12%;
+}
+.carousel-caption h2 { color: var(--cm-blanco); }
+
+.cabecera {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  color: var(--cm-blanco);
+}
+.cabecera::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(7,31,86,.45), rgba(7,31,86,.85));
+}
+.cabecera .container { position: relative; padding-bottom: 2.5rem; }
+.cabecera h1 { color: var(--cm-blanco); }
+.cabecera .breadcrumb { --bs-breadcrumb-divider-color: var(--cm-naranja); --bs-breadcrumb-item-active-color: #FFFFFF; }
+.cabecera .breadcrumb a { color: #CFE8E7; }
+.cabecera .breadcrumb-item.active { font-weight: 600; }
+
+/* ---------- 6. Tarjetas ---------- */
+.card { border: none; box-shadow: 0 .25rem 1rem rgba(7,31,86,.08); overflow: hidden; }
+.card-img-top { height: 200px; object-fit: cover; }
+.icono-circulo {
+  width: 64px; height: 64px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--cm-blanco);
+  color: var(--cm-turquesa);
+  font-size: 1.7rem;
+}
+.modalidad-presencial { background-color: var(--cm-turquesa) !important; }
+.modalidad-online     { background-color: var(--cm-marino) !important; }
+.modalidad-urgencias  { background-color: var(--cm-naranja) !important; color: var(--cm-noche) !important; }
+
+/* ---------- 7. Galería ---------- */
+.foto-galeria { cursor: zoom-in; border-radius: var(--bs-border-radius); overflow: hidden; position: relative; }
+.foto-galeria img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .5s ease; }
+.foto-galeria figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: .6rem .9rem;
+  background: linear-gradient(0deg, rgba(7,31,86,.85), transparent);
+  color: var(--cm-blanco);
+  font-family: "Montserrat", sans-serif; font-weight: 600; font-size: .95rem;
+}
+.foto-galeria:hover img { transform: scale(1.08); }
+.nav-pills { --bs-nav-pills-link-active-bg: var(--cm-turquesa); --bs-nav-link-color: var(--cm-turquesa); --bs-nav-link-hover-color: var(--cm-marino); }
+
+/* ---------- 8. Acordeón ---------- */
+.accordion {
+  --bs-accordion-active-bg: var(--cm-blanco);
+  --bs-accordion-active-color: var(--cm-turquesa);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 .25rem rgba(231,139,63,.4);
+}
+.accordion-button { font-family: "Montserrat", sans-serif; font-weight: 600; }
+
+/* ---------- 9. Formularios ---------- */
+.form-control:focus, .form-select:focus {
+  border-color: var(--cm-naranja);
+  box-shadow: 0 0 0 .25rem rgba(231,139,63,.35);
+}
+.form-range::-webkit-slider-thumb { background-color: var(--cm-turquesa); }
+.form-range::-moz-range-thumb { background-color: var(--cm-turquesa); }
+.form-range:focus::-webkit-slider-thumb { box-shadow: 0 0 0 .25rem rgba(231,139,63,.40); }
+.form-check-input:checked { background-color: var(--cm-turquesa); border-color: var(--cm-turquesa); }
+
+/* ---------- 10. Pie de página ---------- */
+footer { background: var(--cm-noche); color: #C9D3EA; }
+footer h5 { color: var(--cm-blanco); }
+footer a { color: #C9D3EA; text-decoration: none; }
+footer a:hover { color: var(--cm-naranja); }
+.redes a { font-size: 1.4rem; margin-right: .8rem; }
+.autor { font-size: .85rem; color: var(--cm-naranja); }
+
+/* =========================================================
+   11. ANIMACIONES
+   ========================================================= */
+
+/* a) Aparición suave al hacer scroll (la clase .visible la añade main.js) */
+.aparecer { opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; }
+.aparecer.visible { opacity: 1; transform: translateY(0); }
+
+/* b) Tarjeta que se eleva al pasar el ratón */
+.card-elevar { transition: transform .3s ease, box-shadow .3s ease; }
+.card-elevar:hover { transform: translateY(-8px); box-shadow: 0 1rem 2rem rgba(7,31,86,.18); }
+
+/* c) Botón con "latido" para llamar la atención */
+@keyframes latido {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(231,139,63,.6); }
+  50%      { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(231,139,63,0); }
+}
+.btn-latido { animation: latido 2.2s ease-in-out infinite; }
+
+/* d) Icono de la marca que se balancea */
+@keyframes balanceo { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-12deg); } }
+.navbar-brand:hover i { display: inline-block; animation: balanceo .6s ease-in-out 2; }
+
+/* Respetamos a quien prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .aparecer { opacity: 1; transform: none; transition: none; }
+  .btn-latido, .navbar-brand:hover i { animation: none; }
+}
+
+/* ---------- 12. Ajustes responsive ---------- */
+@media (max-width: 575.98px) {
+  .carousel-item { height: 62vh; }
+  .carousel-caption { left: 5%; right: 5%; padding: 1rem; }
+  .carousel-caption h2 { font-size: 1.4rem; }
+  .seccion { padding: 3rem 0; }
+  .cabecera { min-height: 220px; }
+}
+
+/* ---------- 13. Tabla de horarios ---------- */
+.tabla-horarios {
+  --bs-table-striped-bg: rgba(14, 124, 124, .06);
+  --bs-table-hover-bg: rgba(231, 139, 63, .10);
+}
+.tabla-horarios thead th { background-color: var(--cm-turquesa); color: #FFFFFF; font-family: "Montserrat", sans-serif; }
+.tabla-horarios caption { font-size: .85rem; }
