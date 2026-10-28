@@ -1,6 +1,5 @@
-// =========================================================
-// VITALIA - JavaScript común a todas las páginas
-// =========================================================
+
+// Scripts comunes
 document.addEventListener("DOMContentLoaded", () => {
 
   // 1. Animación de aparición al hacer scroll (IntersectionObserver)
@@ -14,15 +13,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.15 });
   document.querySelectorAll(".aparecer").forEach((el) => observador.observe(el));
 
-  // 2. Tooltips de Bootstrap (hay que activarlos con JS)
+  // Activacion tooltips
   document.querySelectorAll('[data-bs-toggle="tooltip"]')
     .forEach((el) => new bootstrap.Tooltip(el));
 
-  // 3. Año actual en el pie de página
+  // Año actual
   const anio = document.getElementById("anio");
   if (anio) anio.textContent = new Date().getFullYear();
 
-  // 4. Galería: filtro por categoría con nav-pills
+  // filtro por categoría Juan
   const botonesFiltro = document.querySelectorAll("[data-filtro]");
   botonesFiltro.forEach((boton) => {
     boton.addEventListener("click", () => {
@@ -36,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 5. Galería: abrir la foto pulsada dentro del modal
+  // REACION MODAL JUAN
   const modalFoto = document.getElementById("modalFoto");
   if (modalFoto) {
     modalFoto.addEventListener("show.bs.modal", (evento) => {
@@ -48,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 6. Contacto: validación del formulario y aviso con un Toast
+  // comprobar formulario
   const formulario = document.getElementById("formContacto");
   if (formulario) {
     formulario.addEventListener("submit", (evento) => {
